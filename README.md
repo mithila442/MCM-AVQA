@@ -19,7 +19,7 @@ MCM-AVQA is a confidence-aware framework for **No-Reference Audio-Visual Quality
 ## Architecture
 
 <p align="center">
-  <img src="mcm-avqa.png" alt="MCM-AVQA overall architecture" width="100%">
+  <img src="MCM-AVQA.png" alt="MCM-AVQA overall architecture" width="100%">
 </p>
 
 <p align="center"><em><b>Figure 1.</b> Overall architecture of MCM-AVQA. Swin and VGGish encode the video and audio streams, while specific modules estimate visual and audio confidences. The confidence-aware Audio-Visual Mixer then modulates cross-modal attention before predicting the overall audio-visual quality.</em></p>
