@@ -219,7 +219,7 @@ If you use this code or build on this work, please cite:
 
 ## Acknowledgements
 
-This work builds on several open-source components:
+This work was supported by the Department of Computer Science, Texas State University. Also. this work builds on several open-source components:
 
 - **Swin Transformer** — Liu et al., ICCV 2021
 - **VGGish** — Hershey et al., ICASSP 2017
@@ -227,9 +227,3 @@ This work builds on several open-source components:
 - **SCOREQ** — Ragano et al., NeurIPS 2024 — used for no-reference audio confidence
 
 We thank the authors of LIVE-SJTU, UnB-AV, and UnB-AVQ for releasing their datasets to the research community.
-
----
-
-## License
-
-Released for academic and research use. See `LICENSE` for details.
