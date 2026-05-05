@@ -1,0 +1,28 @@
+# ==================== CORE DEEP LEARNING FRAMEWORKS ====================
+# DO NOT install from PyPI! Use this command FIRST:
+# pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
+
+# ==================== AUDIO-VISUAL MODELS/UTILS ========================
+timm==0.6.7
+fairseq==0.12.2            # NOMAD, wav2vec2
+nomad_audio==0.0.9         # NOMAD scoring toolbox
+
+# ==================== AUDIO PROCESSING ================================
+resampy
+soundfile
+scipy
+librosa==0.10.1            # Optional, advanced audio
+moviepy==2.2.1             # Video audio extraction
+
+# ==================== VIDEO PROCESSING ================================
+opencv-python
+
+# ==================== DATA & CONFIG HANDLING ==========================
+numpy<2.0                  # Critical for torch/fairseq/nomad_audio 2025
+PyYAML>=5.4
+pandas
+tqdm
+
+# ==================== LOGGING / OPTIONAL / DEV ========================
+tensorboardX
+pytest

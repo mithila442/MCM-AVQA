@@ -1,0 +1,48 @@
+# configs/model_config.yaml
+
+# ---- Backbone Modules ----
+visual_backbone: swin_transformer
+audio_backbone: vggish
+
+# ---- Backbone Parameters ----
+swin:
+  model_name: swin_small_patch4_window7_224
+  pretrained: false
+  checkpoint_path: checkpoints/swin_small_patch4_window7_224.pth
+
+# ---- Preprocessing ----
+audio:
+  model: vggish
+  target_sr: 16000
+  n_fft: 400
+  hop_length: 160
+  n_mels: 64
+  input_frames: 96
+
+video:
+  target_size: [224, 224]
+  frame_skip: 1
+  max_frames: 8
+
+cross_modal_attention:
+  visual_dim: 768
+  audio_dim: 128
+  hidden_dim: 512
+
+fusion:
+  feature_dim: 512
+
+# ---- Visual Reliability Model ----
+visual_reliability:
+  checkpoint_path: checkpoints/visual_artifacts_ckpt.ckpt
+  num_heads: 3
+  hidden_dim: 16
+
+# ---- Training Parameters ----
+SEED: 42
+batch_size: 1
+epochs: 300
+learning_rate: 0.00001
+
+# ---- Output ----
+output_dim: 1

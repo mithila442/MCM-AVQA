@@ -1,0 +1,26 @@
+# Pretrained weights — host on Google Drive
+checkpoints/*.pth
+checkpoints/*.ckpt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+venv/
+myenv/
+.env
+
+# Outputs / artifacts
+*.log
+*.npy
+outputs/
+predictions/
+
+# Datasets (too large)
+datasets/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
