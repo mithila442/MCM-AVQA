@@ -18,6 +18,12 @@ MCM-AVQA is a confidence-aware framework for **No-Reference Audio-Visual Quality
 
 ## Architecture
 
+<p align="center">
+  <img src="mcm-avqa.png" alt="MCM-AVQA overall architecture" width="100%">
+</p>
+
+<p align="center"><em><b>Figure 1.</b> Overall architecture of MCM-AVQA. Swin and VGGish encode the video and audio streams, while specific modules estimate visual and audio confidences. The confidence-aware Audio-Visual Mixer then modulates cross-modal attention before predicting the overall audio-visual quality.</em></p>
+
 The model has four main components:
 
 1. **Visual encoder** — Swin-Small Transformer extracts spatiotemporal features from 8 uniformly sampled frames per clip.
@@ -30,7 +36,6 @@ Training loss combines MSE with a Pearson-correlation loss:
 ```
 L = L_MSE + λ · (1 − ρ(ŷ, y)),  λ = 0.15
 ```
-
 ---
 
 ## Results
