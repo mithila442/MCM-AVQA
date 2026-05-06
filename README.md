@@ -46,11 +46,9 @@ All scores are mapped to MOS via 4-parameter logistic regression. Best result pe
 |-------------------|:-----------:|:------------:|:--------------:|:---------------:|:------------:|:-------------:|
 | Linear            | 0.441       | 0.337        | 0.648          | 0.645           | 0.881        | 0.869         |
 | Minkowski         | 0.342       | 0.314        | 0.653          | 0.653           | 0.768        | 0.879         |
-| Power             | 0.662       | 0.608        | 0.628          | 0.640           | 0.887        | 0.862         |
 | NAViDAd           | 0.881       | 0.890        | —              | —               | —            | —             |
 | DNN-RNT           | —           | —            | 0.960          | 0.961           | 0.904        | 0.902         |
 | DNN-SND           | —           | —            | 0.955          | 0.951           | 0.856        | 0.848         |
-| DNFAVQ            | —           | —            | 0.918          | 0.907           | —            | —             |
 | Nave+w2v          | **0.936**   | **0.959**    | —              | —               | —            | —             |
 | UNQA (A/V)        | —           | —            | —              | —               | 0.903        | 0.863         |
 | **MCM-AVQA (ours)** | 0.894     | 0.876        | **0.965**      | **0.970**       | **0.967**    | **0.952**     |
@@ -94,16 +92,6 @@ The two pretrained checkpoints required to run MCM-AVQA are hosted on Google Dri
 | `swin_small_patch4_window7_224.pth` | Swin-Small ImageNet-pretrained backbone (visual encoder) | [Google Drive](https://drive.google.com/file/d/1VoCRSA1q8lIiqxZcgqNuoaCtPa7Hro9k/view?usp=sharing) |
 | `visual_artifacts_ckpt.ckpt`        | MVAD artifact detector (frozen) used by the Visual Confidence Module | [Google Drive](https://drive.google.com/file/d/1VsklW4dQlM9IRlpTSJFjsuscT2cBdsXP/view?usp=sharing) |
 
-After downloading, your `checkpoints/` folder should look like:
-
-```
-checkpoints/
-├── swin_small_patch4_window7_224.pth
-└── visual_artifacts_ckpt.ckpt
-```
-
-Paths are configured in `configs/model_config.yaml` (`swin.checkpoint_path` and `visual_reliability.checkpoint_path`). Update them there if you place the files elsewhere.
-
 ## Datasets
 
 MCM-AVQA is evaluated on three public AVQA datasets. Download each from its source and place under `datasets/`.
@@ -114,19 +102,6 @@ MCM-AVQA is evaluated on three public AVQA datasets. Download each from its sour
 | **UnB-AV**    | 800 clips, Exp1/Exp2/Exp3 distortions   | [Official page](https://www.ene.unb.br/mylene/databases.html) |
 | **UnB-AVQ**   | 78 clips                                | [Official page](https://www.ene.unb.br/mylene/databases.html) |
 
-Expected layout:
-
-```
-datasets/
-├── LIVE-SJTU_AVQA/
-│   ├── Distorted/         # *.yuv + *.wav files
-│   └── MOS.xlsx
-├── exp3/                   # UnB-AV Exp3 (.avi)
-│   └── UnB-AVQ-2018-Experiment3.csv
-└── 2013-UnB-AVQ/
-    └── Exp3/               # UnB-AVQ 2013 Exp3 (.avi)
-        └── UnB-AVQ-2013-Experiment3.csv
-```
 
 ### Audio confidence CSVs (SCOREQ)
 
@@ -164,9 +139,6 @@ python3 scripts/train_audiovisual.py \
 | Weight decay     | 5 × 10⁻³      |
 | Batch size       | 6             |
 | Frames per clip  | 8 (uniform)   |
-| Audio backbone   | VGGish        |
-| Visual backbone  | Swin-Small    |
-| Loss             | MSE + 0.15 · (1 − PLCC) |
 | Early stopping   | patience = 20 |
 | Train/Val/Test split | 70 / 15 / 15 |
 | GPU              | NVIDIA RTX 5000 (each 25GB) |
@@ -217,7 +189,7 @@ If you use this code or build on this work, please cite:
 
 ## Acknowledgements
 
-This work was supported by the Department of Computer Science, Texas State University. Also. this work builds on several open-source components:
+This work was supported by the Department of Computer Science, Texas State University. Also, this work builds on several open-source components:
 
 - **Swin Transformer** — Liu et al., ICCV 2021
 - **VGGish** — Hershey et al., ICASSP 2017
