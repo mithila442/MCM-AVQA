@@ -174,14 +174,11 @@ Each evaluation script reports SROCC, PLCC (before and after 4PL mapping), RMSE 
 If you use this code or build on this work, please cite:
 
 ```bibtex
-@misc{mithila2026mcmavqa,
-      title={Multimodal Confidence Modeling in Audio-Visual Quality Assessment}, 
-      author={Mayesha Maliha R. Mithila and Mylene C. Q. Farias},
-      year={2026},
-      eprint={2605.01219},
-      archivePrefix={arXiv},
-      primaryClass={cs.MM},
-      url={https://arxiv.org/abs/2605.01219}, 
+@article{mithila2026multimodal,
+  title={Multimodal Confidence Modeling in Audio-Visual Quality Assessment},
+  author={Mithila, Mayesha Maliha R and Farias, Mylene CQ},
+  journal={arXiv preprint arXiv:2605.01219},
+  year={2026}
 }
 ```
 
